@@ -4,7 +4,7 @@ from gensim.summarization.summarizer import summarize
 def prepro(text):
     # sentence = re.sub('([a-z])','',text) # base eng
     sentence = re.sub('[ㄱ-ㅎㅏ-ㅣ]+', '', text)  # base kor
-    sentence = re.sub('[-=+,#/\?^$@*\"※~&%ㆍ!』\\|\[\]\<\>`\'…》]', '', sentence)  # base spec
+    sentence = re.sub('[-=+,#/\?^$@*\"※~&ㆍ!』\\|\[\]\<\>`\'…》]', '', sentence)  # base spec
     sentence = re.sub("\s?\\[*\]", '', sentence)
     sentence = re.sub("^\s?[▶△|\/]→*", '', sentence)  # spec0
     sentence = re.sub("▲|■|※|☎|△", '', sentence)  # spec1
